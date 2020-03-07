@@ -48,7 +48,7 @@ theTitleGood="Success. Mac is in Group"
 theMessageGood="This mac is in the group"
 theTitleBad="Failed. Mac is NOT in Group"
 theMessageBad="This mac is NOT in the group, open remediantion page?"
-theURL="https://www.apple.com"
+theURL="jamfselfservice://content?entity=policy&id=xx&action=view"
 groupID="2000"
 
 ## Function Decrypt Strings
