@@ -70,17 +70,17 @@ Security and Privacy payload configured to Escrow the Recovery Key to Jamf PRO S
     - P10. jamfselfservice://content?entity=policy&id=62&action=view
     - P11. 62
 
-##Config Profile Escrow Title
+## Config Profile Escrow Title
 ![Config Profile Escrow Title](/images/CPEscrowTitle.png)
 
-##Config Profile Escrow FV2 Key
+## Config Profile Escrow FV2 Key
 ![Config Profile Escrow FV2 Key](/images/CPEscrowFV2Key.png)
 
-##Smart Computer Group Title
+## Smart Computer Group Title
 ![Smart Computer Group Title](/images/SmartGroupTitle.png)
 
-##Smart Computer Group Criteria
+## Smart Computer Group Criteria
 ![Smart Computer Group Criteria](/images/SmartGroupCriteriaFV2Valid.png)
 
-##Policy Script Parameters
+## Policy Script Parameters
 ![Policy Script Parameters](/images/PolicyScriptParameters.png)
