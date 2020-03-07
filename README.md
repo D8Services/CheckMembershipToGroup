@@ -8,27 +8,22 @@ https://github.com/jamf/Encrypted-Script-Parameters
 
 ### Usage of parameters
 sh CheckMembershipToGroup.sh 1 2 3 4 5 6 7 8 9 10 11
-	-.MountPoint> 	from Jamf
-	-.ComputerName 	from Jamf
-	-.UserName 		from Jamf
-	-.Salted apiUserName
-	-.Salted apiPassword
-	-.Message Subject Good
-	-.Message Good
-	-.Message Subject Bad
-	-.Message Bad
-	-.RemediationURL
-	-. Group ID Number
+1. MountPoint> 	from Jamf
+2. ComputerName 	from Jamf
+3. UserName 		from Jamf
+4. Salted apiUserName
+5. Salted apiPassword
+6. Message Subject Good
+7. Message Good
+8. Message Subject Bad
+9. Message Bad
+10. RemediationURL
+11. Group ID Number
   
 ### Example Values
-theTitleGood="Success. Mac is in Group"
-
-theMessageGood="This mac is in the group"
-
-theTitleBad="Failed. Mac is NOT in Group"
-
-theMessageBad="This mac is NOT in the group, open remediantion page?"
-
-theURL="https://www.apple.com"
-
-groupID="2000
+- theTitleGood="Success. Mac is in Group"
+- theMessageGood="This mac is in the group"
+- theTitleBad="Failed. Mac is NOT in Group"
+- theMessageBad="This mac is NOT in the group, open remediantion page?"
+- theURL="https://www.apple.com"
+- groupID="2000
