@@ -56,8 +56,6 @@ function DecryptString() {
 	# Usage: ~$ DecryptString "Encrypted String" "Salt" "Passphrase"
 echo "${1}" | /usr/bin/openssl enc -aes256 -d -a -A -S "${2}" -k "${3}"
 }
-# apiuser - Encrypted String: U2FsdGVkX1/SeCJbLPB9Gf/M8T1WG9fItYOtKpZ8I9g=
-# apiPass - Encrypted String: U2FsdGVkX1+/eTmwfd4GA1JH6yNhYfq5Ae9Bdc3s/TwyPTYP6baZtH3aGcXTe5dF
 
 apiUser=$(DecryptString "${4}" "d278225b2cf07d19" "30aa6c4b854a14f00414c644")
 apiPass=$(DecryptString "${5}" "bf7939b07dde0603" "affa996ddcd29a39d366852b")
