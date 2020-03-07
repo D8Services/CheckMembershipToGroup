@@ -112,20 +112,20 @@ if [ ! $jss_availability = "available." ]; then
 fi
 
 GroupInfo=$(curl -sku "${apiUser}":"${apiPass}" -H "accept: text/xml" ${jssURL}JSSResource/computergroups/id/${groupID})
-GroupName=$(echo ${GroupInfo} | xmllint --xpath '/computer_group/name/id/text()' -)
+GroupName=$(echo ${GroupInfo} | xmllint --xpath '/computer_group/name/text()' -)
 echo "Groupname is $GroupName"
 
 
 if [[ "${GroupInfo}" =~ "${serialNumber}" ]];then
 	echo "OK, Computer is a member"
 	memberConfirmed="Yes"
-	ScriptLogging "OK, Computer is a member"
-	launchctl "asuser" "USER_ID" "$jamfHelper" -title "${theTitleGood}" -windowType utility -description "${theMessageGood}" -icon "/System/Library/CoreServices/ReportPanic.app/Contents/Resources/ProblemReporter.icns" -button1 "OK" -defaultButton 1 -countdown 20
+	ScriptLogging "OK, Computer is a member of ${GroupName}"
+	launchctl "asuser" "USER_ID" "$jamfHelper" -title "${theTitleGood}" -windowType utility -description "${theMessageGood} - Group ${GroupName}" -icon "/System/Library/CoreServices/ReportPanic.app/Contents/Resources/ProblemReporter.icns" -button1 "OK" -defaultButton 1 -countdown 20
 else
 	echo "Not a Member"
-	ScriptLogging "Not a Member"
+	ScriptLogging "Not a Member of ${GroupName}"
 	memberConfirmed="No"
-	launchctl "asuser" "USER_ID" "$jamfHelper" -title "${theTitleBad}" -windowType utility -description "${theMessageBad}" -icon "/System/Library/CoreServices/ReportPanic.app/Contents/Resources/ProblemReporter.icns" -button2 "Cancel" -button1 "Open" -defaultButton 1 -countdown 20
+	launchctl "asuser" "USER_ID" "$jamfHelper" -title "${theTitleBad}" -windowType utility -description "${theMessageBad} - Group ${GroupName}" -icon "/System/Library/CoreServices/ReportPanic.app/Contents/Resources/ProblemReporter.icns" -button2 "Cancel" -button1 "Open" -defaultButton 1 -countdown 20
 fi
 
 # Open the URL if the user clicked OK
