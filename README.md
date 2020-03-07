@@ -34,11 +34,11 @@ jamfselfservice://content?entity=policy&id=62&action=view
 you may have a separate web page you want to direct users to with a remediation
 
 ### Full Example
-As mentioned I wrote this with FileVault 2 recovery keys in mind. So If wanted users who enroled an existing configured Mac to be tested if FileVault 2 were enabled. If not, then two items
+As mentioned I wrote this with FileVault 2 recovery keys in mind. So I wanted users who enroled an existing configured Mac to be tested if FileVault 2 were enabled. If not, then two items
 1. Config profile with Escrow of Key configured to Jamf PRO Scoped to "All Computers"
 2. Policy Setup to enable FileVault 2 at next login, Policy set to run on "Enrollment Complete" Trigger, target Macs without FileVault 2 enabled.
 
-But what if the device has FileVault enabled. We need to get the item back into Jamf. So after enrolment the user can open Self Service and check if their machine if configured with a Recovery Key via policy, leveraging this script.
+But what if the device has FileVault enabled. We need to get the item back into Jamf. So after enrolment the user can open Self Service and check if their machine if configured with a Recovery Key via policy, leveraging this script. Jamf also provide a useful script that allows us to challenge the user for their FV2 password and then reissue the key for Jamf.
 
 Configuration profile
 Security and Privacy payload configured to Escrow the Recovery Key to Jamf PRO Scope all Computers
@@ -50,7 +50,7 @@ Security and Privacy payload configured to Escrow the Recovery Key to Jamf PRO S
   - Frequency: Once Per Day
   - Trigger: Self Service
   - Payload:  Script ReissueKey.sh
-    - Files and Process Execute Command "**jamf policy**"
+    - Files and Process Execute Command "**jamf policy**" (this sends the Key to Jamf)
   - https://github.com/jamf/FileVault2_Scripts/blob/master/reissueKey.sh
 2. Smart Group
   To Check if a FileVault 2 Individual Recovery Key is Valid, ID of this Smart Group is the parameter "__groupID__"
