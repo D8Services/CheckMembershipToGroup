@@ -8,7 +8,7 @@ https://github.com/jamf/Encrypted-Script-Parameters
 
 ### Usage of parameters
 sh CheckMembershipToGroup.sh 1 2 3 4 5 6 7 8 9 10 11
-1. MountPoint> 	from Jamf
+1. MountPoint 	from Jamf
 2. ComputerName 	from Jamf
 3. UserName 		from Jamf
 4. Salted apiUserName
